@@ -1,0 +1,12 @@
+# Dnevno inkrementalno varnostno kopiranje kritičnih podatkov ob 03:00
+0 3 * * * /backup-critical.sh incremental
+
+# Tedensko zrcalno varnostno kopiranje ostalih podatkov ob nedeljah ob 02:00
+0 2 * * 0 /backup-other.sh mirror
+
+
+Za kritične podatke bi naredil bolj pogosto torej dnevno varnostno kopiranje. 
+Uporabil bi inkrementalno ker omogoča omogoča obnovitev na katero koli prejšnje stanje.
+
+Za ostale podatke bi rekel da zadostuje tedensko varnostno kopiranje. 
+Uporabil bi zrcalno ker je bolj enostavno za uporabljat in tudi bolj hitro, čeprav lahko dobimo podatke za samo 1 kopijo nazaj.
